@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Age</title>
+    <script>
+        function calculateAge() {
+            const birthYear = document.getElementById("birthYear").value;
+            const currentYear = document.getElementById("currentYear").value;
+
+            // Validate that both inputs are numbers
+            if (isNaN(birthYear) || isNaN(currentYear)) {
+                document.getElementById("result").innerText = "Invalid input. Please provide numeric values for both birth year and current year.";
+                return;
+            }
+
+            // Ensure the years are integers
+            const birthYearInt = parseInt(birthYear);
+            const currentYearInt = parseInt(currentYear);
+
+            // Check if the birth year is greater than the current year
+            if (birthYearInt > currentYearInt) {
+                document.getElementById("result").innerText = "Invalid input. Birth year cannot be greater than the current year.";
+                return;
+            }
+
+            // Calculate the age
+            const age = currentYearInt - birthYearInt;
+            document.getElementById("result").innerText = `You are ${age} years old.`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculate Your Age</h1>
+    <label for="birthYear">Enter Birth Year:</label>
+    <input type="text" id="birthYear" placeholder="e.g., 1990">
+    <br><br>
+    <label for="currentYear">Enter Current Year:</label>
+    <input type="text" id="currentYear" placeholder="e.g., 2024">
+    <br><br>
+    <button type="button" onclick="calculateAge()">Calculate Age</button>
+    <p id="result"></p>
+</body>
+</html>
