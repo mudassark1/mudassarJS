@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyze String</title>
+    <script>
+        function analyzeString() {
+            const inputString = document.getElementById("inputString").value;
+
+           
+            const length = inputString.length;
+
+           
+            const lowerCase = inputString.toLowerCase();
+
+          
+            const upperCase = inputString.toUpperCase();
+
+           
+            const containsJavaScript = lowerCase.includes("javascript");
+
+            
+            const countA = (inputString.match(/A/g) || []).length;
+
+          
+            const result = {
+                length: length,
+                lowerCase: lowerCase,
+                upperCase: upperCase,
+                containsJavaScript: containsJavaScript,
+                countA: countA
+            };
+
+            // Display the result
+            document.getElementById("result").innerText = JSON.stringify(result, null, 2);
+        }
+    </script>
+</head>
+<body>
+    <h1>Analyze String</h1>
+    <label for="inputString">Enter a string:</label>
+    <input type="text" id="inputString" placeholder="Type your string here">
+    <br><br>
+    <button type="button" onclick="analyzeString()">Analyze</button>
+    <pre id="result"></pre>
+</body>
+</html>
