@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Object</title>
+    <script>
+        // Define a person object using a constructor function
+        function Person(name, age, gender, occupation) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.occupation = occupation;
+        }
+
+        // Create two instances of the Person object
+        const person1 = new Person("Alice", 30, "Female", "Doctor");
+        const person2 = new Person("Bob", 25, "Male", "Artist");
+
+        // Print details of each person
+        console.log("Person 1 Details:");
+        console.log("Name:", person1.name);
+        console.log("Age:", person1.age);
+        console.log("Gender:", person1.gender);
+        console.log("Occupation:", person1.occupation);
+
+        console.log("Person 2 Details:");
+        console.log("Name:", person2.name);
+        console.log("Age:", person2.age);
+        console.log("Gender:", person2.gender);
+        console.log("Occupation:", person2.occupation);
+    </script>
+</head>
+<body>
+    <h1>Check the console for person details</h1>
+    <button type="button" onclick="myfunc()">Click</button>
+    
+</body>
+</html>
