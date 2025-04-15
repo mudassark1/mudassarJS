@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dates and Regex Example</title>
+    <script>
+        // Function to display the current dates        }
+
+        // Function to validate a date string using regex
+        function validateDate() {
+            const dateInput = document.getElementById("dateInput").value;
+            const dateRegex = /^\d{4}-\d{2}-\d{2}$/; // YYYY-MM-DD format
+            const isValid = dateRegex.test(dateInput);
+
+            if (isValid) {
+                document.getElementById("validationResult").innerText = "Valid date format!";
+            } else {
+                document.getElementById("validationResult").innerText = "Invalid date format. Please use YYYY-MM-DD.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Dates and Regex Example</h1>
+
+    <!-- Display current date -->
+    <button onclick="displayDate()">Show Current Date</button>
+    <p id="dateDisplay"></p>
+
+    <!-- Date validation -->
+    <h2>Validate Date Format</h2>
+    <input type="text" id="dateInput" placeholder="Enter date (YYYY-MM-DD)">
+    <button onclick="validateDate()">Validate</button>
+    <p id="validationResult"></p>
+</body>
+</html>
