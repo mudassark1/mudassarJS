@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JavaScript Conditionals and Loops</title>
+</head>
+<body>
+  <h1>JavaScript Conditionals and Loops</h1>
+  <button type="button" onclick="myfunc()">Click</button>
+
+  <script>
+    function myfunc() {
+      // if statement
+      let number = 5;
+      if (number % 2 === 0) {
+        console.log("if: Number is even");
+      }
+
+      // if-else statement
+      let num = -5;
+      if (num > 0) {
+        console.log("if-else: Number is positive");
+      } else {
+        console.log("if-else: Number is negative");
+      }
+
+      // else if
+      let num3 = 0;
+      if (num3 > 0) {
+        console.log("else-if: Number is positive");
+      } else if (num3 === 0) {
+        console.log("else-if: Number is zero");
+      } else {
+        console.log("else-if: Number is negative");
+      }
+
+      // switch statement
+      let fruit = "apple";
+      switch (fruit) {
+        case "banana":
+          console.log("switch: It's a banana.");
+          break;
+        case "apple":
+          console.log("switch: It's an apple.");
+          break;
+        default:
+          console.log("switch: Unknown fruit.");
+      }
+
+      // for loop
+      console.log("for loop:");
+      for (let i = 0; i <= 10; i++) {
+        console.log("  - i = " + i);
+      }
+
+      // while loop
+      console.log("while loop:");
+      let j = 0;
+      while (j < 3) {
+        console.log("  - j = " + j);
+        j++;
+      }
+
+      // do-while loop
+      console.log("do-while loop:");
+      let numb = 0;  // fixed variable name
+      do {
+        console.log("  - numb = " + numb);
+        numb++;
+      } while (numb < 3);
+
+      // for...of loop
+      console.log("for...of loop:");
+      const colors = ["red", "green", "blue"];
+      for (const color of colors) {
+        console.log("  - color = " + color);
+      }
+
+      // for...in loop
+      console.log("for...in loop:");
+      const person1 = { name: "Ziya", age: 25, city: "New York" };
+      for (const key in person1) {
+        console.log(`  - ${key}: ${person1[key]}`);
+      }
+    }
+  </script>
+</body>
+</html>
