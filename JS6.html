@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Arrays</title>
+</head>
+<body>
+    <h1>JavaScript</h1>
+    <p id="demo"></p>
+    <button type="button" onclick="myfunc()">Click</button>
+    <script>
+        function myfunc() {
+            var array1=["John","Doe","Alice","Bob"]
+            console.log("orignal array:",array1)
+            document.getElementById("demo").innerHTML=array1.toString()
+            array1.push("Eve")
+            console.log("Name added at the end:",array1)
+            array1.splice(2,2)
+            console.log("Doe name removed:",array2)
+            var array2=["John", "Jane","Doe","Alice","Bob"]
+            array2.sort()
+            console.log("After Sorting:",array2)
+            if (array2.includes("Alice")) {
+                console.log("Alice is  present")
+            } else {
+                console.log("Alice is not present")
+            }
+            var array2=["John","Jane","Doe","Alice","Bob"]
+            var upperCaseNames = array2.map(function(element) {
+                return element.toUpperCase()
+            })
+            console.log(upperCaseNames)
+
+        }
+    </script>
+    
+</body>
+</html>
