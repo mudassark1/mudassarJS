@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+</head>
+<body>
+  <h1>Simple Calculator</h1>
+  <input type="number" id="num1" placeholder="Enter first number"><br><br>
+  <input type="number" id="num2" placeholder="Enter second number"><br><br>
+  <select id="operation">
+    <option value="add">Add</option>
+    <option value="subtract">Subtract</option>
+    <option value="multiply">Multiply</option>
+    <option value="divide">Divide</option>
+  </select><br><br>
+
+  <button onclick="performCalculation()">Calculate</button>
+
+  <h3>Result:</h3>
+  <p id="result"></p>
+
+  <script>
+    // Function to perform calculation 
+    function calculate(num1, num2, operation, callback) {
+      let result;
+      switch (operation) {
+        case "add":
+          result = num1 + num2;
+          break;
+        case "subtract":
+          result = num1 - num2;
+          break;
+        case "multiply":
+          result = num1 * num2;
+          break;
+        case "divide":
+          if (num2 !== 0) {
+            result = num1 / num2;
+          } else {
+            return callback(new Error("Cannot divide by zero"));
+          }
+          break;
+        default:
+          return callback(new Error("Invalid operation"));
+      }
+      callback(null, result);
+    }
+
+    // Handler to get inputs and call calculate
+    function performCalculation() {
+      const num1 = parseFloat(document.getElementById("num1").value);
+      const num2 = parseFloat(document.getElementById("num2").value);
+      const operation = document.getElementById("operation").value;
+      const resultElement = document.getElementById("result");
+
+      // Input validation
+      if (isNaN(num1) || isNaN(num2)) {
+        resultElement.textContent = "Please enter valid numbers.";
+        return;
+      }
+
+      calculate(num1, num2, operation, (error, result) => {
+        if (error) {
+          resultElement.textContent = error.message;
+        } else {
+          resultElement.textContent = "Result: " + result;
+        }
+      });
+    }
+  </script>
+</body>
+</html>
